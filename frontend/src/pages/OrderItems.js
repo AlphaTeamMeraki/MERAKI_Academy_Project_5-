@@ -47,7 +47,7 @@ const OrderItems = () => {
   const [orderItems, setOrderItems] = useState("");
   const getItemsOrder = async () => {
     try {
-      const result = await axios.get(`http://localhost:5000/orders/${id}`, {
+      const result = await axios.get(`https://meraki-academy-project-5-1jun.onrender.com/orders/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -110,7 +110,7 @@ const OrderItems = () => {
     console.log(id);
     try {
       const result = await axios.post(
-        `http://localhost:5000/reviews/rating/${id}`,
+        `https://meraki-academy-project-5-1jun.onrender.com/reviews/rating/${id}`,
         { rating, comment,user_id: orderItems.user_id, id: orderItems.id },
         {
           headers: {

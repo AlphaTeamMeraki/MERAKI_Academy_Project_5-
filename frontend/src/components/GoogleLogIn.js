@@ -12,7 +12,7 @@ import { setToken, setUserId,setRole } from '../redux/auth';
   const responseGoogle = async (response) => {
 
     try {
-      const res = await axios.post(`http://localhost:5000/users/google-login`, {
+      const res = await axios.post(`https://meraki-academy-project-5-1jun.onrender.com/users/google-login`, {
         token: response.credential,
       });
       dispatch(setToken(res.data.token)) 

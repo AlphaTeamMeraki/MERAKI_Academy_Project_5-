@@ -34,7 +34,7 @@ const Profile = () => {
 
   const findUserById = async () => {
     try {
-      const result = await axios.get(`http://localhost:5000/riders/${userId}`);
+      const result = await axios.get(`https://meraki-academy-project-5-1jun.onrender.com/riders/${userId}`);
       setUser(result.data.result);
     } catch (err) {
       console.error("Error fetching user data:", err);
@@ -43,11 +43,11 @@ const Profile = () => {
 
   const updateProfile = async () => {
     try {
-      await axios.put(`http://localhost:5000/riders/${userId}`, {
+      await axios.put(`https://meraki-academy-project-5-1jun.onrender.com/riders/${userId}`, {
         vehicle_details: user.vehicle_details,
         status: user.status, 
       });
-      await axios.put(`http://localhost:5000/users/${userId}`, user);
+      await axios.put(`https://meraki-academy-project-5-1jun.onrender.com/users/${userId}`, user);
       findUserById();
 
       window.location.reload();

@@ -27,7 +27,7 @@ const SignUp = () => {
   
   const handleSignUp = async () => {
     try {
-      const result = await axios.post('http://localhost:5000/users/signup', user);
+      const result = await axios.post('https://meraki-academy-project-5-1jun.onrender.com/users/signup', user);
       setMessage(result.data.message);
       setTimeout(() => {
         navigate('/signin');

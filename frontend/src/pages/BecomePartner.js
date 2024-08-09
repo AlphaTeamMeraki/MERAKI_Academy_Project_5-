@@ -44,7 +44,7 @@ const BecomePartner = () => {
       formData.append(key, restaurant[key]);
     });
     try {
-      const result = await axios.post('http://localhost:5000/users/restaurantOwnerRegistration', formData, {
+      const result = await axios.post('https://meraki-academy-project-5-1jun.onrender.com/users/restaurantOwnerRegistration', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

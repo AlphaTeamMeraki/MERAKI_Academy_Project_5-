@@ -22,7 +22,7 @@ const GetAllOwner = () => {
   const fetchUsers = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/users/restaurantOwner/Registration`,
+        `https://meraki-academy-project-5-1jun.onrender.com/users/restaurantOwner/Registration`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -43,7 +43,7 @@ const GetAllOwner = () => {
   const acceptPendingRiders = async (id) => {
     try {
       const accepted = await axios.post(
-        `http://localhost:5000/users/restaurantOwnerRegistration/${id}`,
+        `https://meraki-academy-project-5-1jun.onrender.com/users/restaurantOwnerRegistration/${id}`,
         {},
         {
           headers: {
@@ -63,7 +63,7 @@ const GetAllOwner = () => {
   const rejectPendingRiders = async (id) => {
     try {
       const reject = await axios.delete(
-        `http://localhost:5000/users/restaurantOwnerRegistration/${id}`,
+        `https://meraki-academy-project-5-1jun.onrender.com/users/restaurantOwnerRegistration/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

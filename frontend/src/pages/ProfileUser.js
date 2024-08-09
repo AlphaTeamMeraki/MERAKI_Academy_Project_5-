@@ -28,7 +28,7 @@ const ProfileUser = () => {
   vehicle_details: ""});
   const findUserById = async () => {
     try {
-      const result = await axios.get(`http://localhost:5000/users/${userId}`, {
+      const result = await axios.get(`https://meraki-academy-project-5-1jun.onrender.com/users/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -43,7 +43,7 @@ const ProfileUser = () => {
   const update = async () => {
     try{ 
     const result = await axios.put(
-        `http://localhost:5000/users/${userId}`,
+        `https://meraki-academy-project-5-1jun.onrender.com/users/${userId}`,
         user
       );
       console.log(result.data)

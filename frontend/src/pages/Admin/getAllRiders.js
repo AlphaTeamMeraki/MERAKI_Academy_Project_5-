@@ -14,7 +14,7 @@ const GetAllRiders = ()=> {
     const [riders , setRiders]=useState([]);
     const getAllRiders = async () => {
         try {
-          const result = await axios.get(`http://localhost:5000/riders/all`)
+          const result = await axios.get(`https://meraki-academy-project-5-1jun.onrender.com/riders/all`)
           console.log(result)
           setRiders(result.data.result);
         } catch (err) {
@@ -26,7 +26,7 @@ const GetAllRiders = ()=> {
     const deletedRiders = async (id)=>{
         console.log(id)
         try{
-        const deleted = await axios.put(`http://localhost:5000/riders/deleted/${id}`)  
+        const deleted = await axios.put(`https://meraki-academy-project-5-1jun.onrender.com/riders/deleted/${id}`)  
          setRiders(riders.filter((ele)=> ele.id!== id))    
        }catch(err){ 
         console.log(err) ; 

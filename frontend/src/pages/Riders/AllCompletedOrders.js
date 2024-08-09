@@ -32,7 +32,7 @@ const AllCompletedOrders = () => {
 
   const getAllOrders = async () => {
     try {
-      const result = await axios.get(`http://localhost:5000/riders/all/delivered`, {
+      const result = await axios.get(`https://meraki-academy-project-5-1jun.onrender.com/riders/all/delivered`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -54,7 +54,7 @@ const AllCompletedOrders = () => {
     setOrderItems([])
     try {
       const result = await axios.get(
-        `http://localhost:5000/riders/order/items/${id}`
+        `https://meraki-academy-project-5-1jun.onrender.com/riders/order/items/${id}`
       );
       setOrderItems(result.data.result);
       console.log(result.data.result)

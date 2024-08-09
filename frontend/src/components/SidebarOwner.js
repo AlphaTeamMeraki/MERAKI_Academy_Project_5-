@@ -35,7 +35,7 @@ const SidebarOwner = () => {
     const getRestaurantInfo = async () => {
       try {
         const result = await axios.get(
-          "http://localhost:5000/restaurants/RestaurantById",
+          "https://meraki-academy-project-5-1jun.onrender.com/restaurants/RestaurantById",
           {
             headers: {
               Authorization: `Bearer ${token}`,

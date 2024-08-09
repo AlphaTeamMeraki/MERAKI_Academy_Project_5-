@@ -30,7 +30,7 @@ const MessageUser = ({ socket, raider_id }) => {
 
   const findUserById = async () => {
     try {
-      const result = await axios.get(`http://localhost:5000/users/${userId}`, {
+      const result = await axios.get(`https://meraki-academy-project-5-1jun.onrender.com/users/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

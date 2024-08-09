@@ -27,7 +27,7 @@ const GetAllRegister = () => {
   const fetchUsers = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/users/rider/registration`,{
+        `https://meraki-academy-project-5-1jun.onrender.com/users/rider/registration`,{
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -47,7 +47,7 @@ const GetAllRegister = () => {
   const acceptPendingRiders = async (id) => {
     try {
       const accepted = await axios.post(
-        `http://localhost:5000/users/riderRegistration/${id}`,{},{
+        `https://meraki-academy-project-5-1jun.onrender.com/users/riderRegistration/${id}`,{},{
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -64,7 +64,7 @@ const GetAllRegister = () => {
   const rejectPendingRiders = async (id) => {
     try {
       const reject = await axios.delete(
-        `http://localhost:5000/users/riderRegistration/${id}`,{
+        `https://meraki-academy-project-5-1jun.onrender.com/users/riderRegistration/${id}`,{
             headers: {
               Authorization: `Bearer ${token}`,
             },

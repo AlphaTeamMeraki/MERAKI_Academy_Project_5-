@@ -38,7 +38,7 @@ const RestaurantDetails = () => {
   const getRestaurantData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/restaurants/allInfo/${id}`
+        `https://meraki-academy-project-5-1jun.onrender.com/restaurants/allInfo/${id}`
       );
       setRestaurant(response.data.restaurant);
       setLoading(false);
@@ -49,7 +49,7 @@ const RestaurantDetails = () => {
   };
   const getCartData = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/carts/elements", {
+      const response = await axios.get("https://meraki-academy-project-5-1jun.onrender.com/carts/elements", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCartItems(response.data.cart);
@@ -77,7 +77,7 @@ const RestaurantDetails = () => {
   const handleAddItem = async (item) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/carts",
+        "https://meraki-academy-project-5-1jun.onrender.com/carts",
         { menu_item_id: item.id, quantity: 1, restaurant_id: id },
         { headers: { Authorization: `Bearer ${token}` } }
       );

@@ -23,7 +23,7 @@ const ViewItems = () => {
   useEffect(() => {
     const getRestaurantInfo = async () => {
       try {
-        const result = await axios.get("http://localhost:5000/items/getItems", {
+        const result = await axios.get("https://meraki-academy-project-5-1jun.onrender.com/items/getItems", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -42,7 +42,7 @@ const ViewItems = () => {
 
   const handleDelete = async (itemId) => {
     try {
-      await axios.delete(`http://localhost:5000/items/deleteItem/${itemId}`, {
+      await axios.delete(`https://meraki-academy-project-5-1jun.onrender.com/items/deleteItem/${itemId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -30,7 +30,7 @@ const BecomeRider = () => {
     e.preventDefault();
     try {
       const result = await axios.post(
-        "http://localhost:5000/users/riderRegistration",
+        "https://meraki-academy-project-5-1jun.onrender.com/users/riderRegistration",
         rider
       );
       setMessage(result.data.message);
