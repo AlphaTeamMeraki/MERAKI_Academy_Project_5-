@@ -31,10 +31,14 @@ const googleLogin = async (req, res) => {
         [name, email, customerRole]
       );
       userResult = newUserResult;
+      const cart = await pool.query(
+        `INSERT INTO carts (user_id) VALUES($1) RETURNING *`,
+        [userResult.rows[0].id]
+      );
     }
 
     const user = userResult.rows[0];
-
+  
     const payload = {
       userId: user.id,
       user: user.name,
