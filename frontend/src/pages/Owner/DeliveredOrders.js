@@ -27,7 +27,7 @@ const DeliveredOrders = () => {
     useEffect(() => {
       const getDeliveredOrders = async () => {
         try {
-          const result = await axios.get('http://localhost:5000/restaurants/restaurant/delivered', {
+          const result = await axios.get('https://meraki-academy-project-5-1jun.onrender.com/restaurants/restaurant/delivered', {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -44,7 +44,7 @@ const DeliveredOrders = () => {
     
   const getItemsOrder = async (id) => {
     try {
-      const result = await axios.get(`http://localhost:5000/orders/${id}`, {
+      const result = await axios.get(`https://meraki-academy-project-5-1jun.onrender.com/orders/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

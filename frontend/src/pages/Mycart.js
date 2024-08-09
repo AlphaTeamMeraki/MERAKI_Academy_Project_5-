@@ -30,7 +30,7 @@ const Mycart = () => {
 
   const findCartById = async () => {
     try {
-      const result = await axios.get(`http://localhost:5000/carts/elements`, {
+      const result = await axios.get(`https://meraki-academy-project-5-1jun.onrender.com/carts/elements`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -53,7 +53,7 @@ const Mycart = () => {
     const updatedItem = updatedCartItems.find(item => item.cart_item_id === id);
 
     try {
-      await axios.put(`http://localhost:5000/carts/${id}`, { quantity: updatedItem.quantity }, {
+      await axios.put(`https://meraki-academy-project-5-1jun.onrender.com/carts/${id}`, { quantity: updatedItem.quantity }, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -72,7 +72,7 @@ const Mycart = () => {
     const updatedItem = updatedCartItems.find(item => item.cart_item_id === id);
 
     try {
-      await axios.put(`http://localhost:5000/carts/${id}`, { quantity: updatedItem.quantity }, {
+      await axios.put(`https://meraki-academy-project-5-1jun.onrender.com/carts/${id}`, { quantity: updatedItem.quantity }, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -84,7 +84,7 @@ const Mycart = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/carts/${id}`, {
+      await axios.delete(`https://meraki-academy-project-5-1jun.onrender.com/carts/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -97,7 +97,7 @@ const Mycart = () => {
 
   const createOrder = async () => {
     try {
-      const result = await axios.post(`http://localhost:5000/orders/checkout`, {
+      const result = await axios.post(`https://meraki-academy-project-5-1jun.onrender.com/orders/checkout`, {
         payment_method: paymentMethod,
         total_price: totalPrice,
       }, {

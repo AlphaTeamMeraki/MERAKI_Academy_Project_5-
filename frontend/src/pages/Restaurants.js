@@ -43,7 +43,7 @@ function Restaurants() {
 
   const fetchAllRestaurants = () => {
     axios
-      .get("http://localhost:5000/restaurants/")
+      .get("https://meraki-academy-project-5-1jun.onrender.com/restaurants/")
       .then((result) => {
         setRestaurants(result.data.result);
         setLoading(false);
@@ -57,7 +57,7 @@ function Restaurants() {
 
   const categorySearch = (text) => {
     axios
-      .get(`http://localhost:5000/restaurants/byCategory/${text}`)
+      .get(`https://meraki-academy-project-5-1jun.onrender.com/restaurants/byCategory/${text}`)
       .then((result) => {
         setRestaurants(result.data.result);
       })
@@ -69,7 +69,7 @@ function Restaurants() {
 
   const filteredRestaurantsByDeliveryFees = () => {
     axios
-      .get(`http://localhost:5000/restaurants/getAllRestaurantByDeliveryFees`)
+      .get(`https://meraki-academy-project-5-1jun.onrender.com/restaurants/getAllRestaurantByDeliveryFees`)
       .then((result) => {
         setRestaurants(result.data.result);
       })

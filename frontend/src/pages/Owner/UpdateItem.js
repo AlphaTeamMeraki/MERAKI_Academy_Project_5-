@@ -21,7 +21,7 @@ const UpdateItem = () => {
   useEffect(() => {
     const getItemInfo = async () => {
       try {
-        const result = await axios.get(`http://localhost:5000/items/getItemById/${id}`, {
+        const result = await axios.get(`https://meraki-academy-project-5-1jun.onrender.com/items/getItemById/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -52,7 +52,7 @@ const UpdateItem = () => {
       formData.append(key, item[key]);
     });
     try {
-      const result = await axios.put(`http://localhost:5000/items/updateItems/${id}`, formData, {
+      const result = await axios.put(`https://meraki-academy-project-5-1jun.onrender.com/items/updateItems/${id}`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'

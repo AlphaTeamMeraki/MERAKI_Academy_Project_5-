@@ -33,7 +33,7 @@ const UpdateRestaurantInfo = () => {
   const handleUpdate = async () => {
     try {
       const result = await axios.put(
-        "http://localhost:5000/restaurants/updateRestaurant",
+        "https://meraki-academy-project-5-1jun.onrender.com/restaurants/updateRestaurant",
         restaurant,
         {
           headers: {

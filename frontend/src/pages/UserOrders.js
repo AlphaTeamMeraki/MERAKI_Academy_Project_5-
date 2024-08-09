@@ -23,7 +23,7 @@ const UserOrders = () => {
   useEffect(() => {
     const getOrders = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/orders", {
+        const response = await axios.get("https://meraki-academy-project-5-1jun.onrender.com/orders", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setOrders(response.data.data);

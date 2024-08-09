@@ -27,7 +27,7 @@ const TemporaryDrawer = () => {
   useEffect(() => {
     const getStatus = async () => {
       try {
-        const result = await axios.get(`http://localhost:5000/riders/${userId}`, 
+        const result = await axios.get(`https://meraki-academy-project-5-1jun.onrender.com/riders/${userId}`, 
         );
         setStatus(result.data.result.status);
       } catch (err) {

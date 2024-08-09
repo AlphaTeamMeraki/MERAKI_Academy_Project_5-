@@ -27,7 +27,7 @@ const MessageRider = ({ socket, user_id }) => {
   // console.log(userId);
   const getRiderById = () => {
     axios
-      .get(`http://localhost:5000/riders/${userId}`)
+      .get(`https://meraki-academy-project-5-1jun.onrender.com/riders/${userId}`)
       .then((result) => {
         setName(result.data.result.first_name);
       })

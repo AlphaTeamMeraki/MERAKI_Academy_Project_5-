@@ -47,7 +47,7 @@ const AddItem = () => {
 
     try {
       const result = await axios.post(
-        "http://localhost:5000/items/addItems",
+        "https://meraki-academy-project-5-1jun.onrender.com/items/addItems",
         formData,
         {
           headers: {

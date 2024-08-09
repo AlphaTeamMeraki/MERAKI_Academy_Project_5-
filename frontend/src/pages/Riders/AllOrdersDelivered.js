@@ -40,7 +40,7 @@ const AllOrdersDelivered = () => {
   const getAllOrders = async () => {
     try {
       const result = await axios.get(
-        `http://localhost:5000/riders/all/onTheWay`,
+        `https://meraki-academy-project-5-1jun.onrender.com/riders/all/onTheWay`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -80,7 +80,7 @@ const AllOrdersDelivered = () => {
     setOrderItems([]);
     try {
       const result = await axios.get(
-        `http://localhost:5000/riders/order/items/${id}`
+        `https://meraki-academy-project-5-1jun.onrender.com/riders/order/items/${id}`
       );
       setOrderItems(result.data.result);
     } catch (err) {
@@ -92,7 +92,7 @@ const AllOrdersDelivered = () => {
     setOpen(false);
     try {
       const result = await axios.put(
-        `http://localhost:5000/riders/delivered/${id}`,
+        `https://meraki-academy-project-5-1jun.onrender.com/riders/delivered/${id}`,
         {},
         {
           headers: {

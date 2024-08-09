@@ -30,7 +30,7 @@ const GetAllUsers = () => {
 
   const getAllUsers = async () => {
     try {
-      const result = await axios.get(`http://localhost:5000/users/find/all`, {
+      const result = await axios.get(`https://meraki-academy-project-5-1jun.onrender.com/users/find/all`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -44,7 +44,7 @@ const GetAllUsers = () => {
   const showDataUser = async (id) => {
     console.log(id) ; 
     try {
-      const result = await axios.get(`http://localhost:5000/users/data/${id}`, {
+      const result = await axios.get(`https://meraki-academy-project-5-1jun.onrender.com/users/data/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -63,7 +63,7 @@ const GetAllUsers = () => {
   const deletedUser = async (id) => {
     try {
       const result = await axios.put(
-        `http://localhost:5000/users/delete/${id}`,
+        `https://meraki-academy-project-5-1jun.onrender.com/users/delete/${id}`,
         {},
         {
           headers: {

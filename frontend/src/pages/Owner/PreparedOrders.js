@@ -11,7 +11,7 @@ const PreparedOrders = () => {
   useEffect(() => {
     const getPreparedOrders = async () => {
       try {
-        const result = await axios.get('http://localhost:5000/restaurants/restaurant/prepare', {
+        const result = await axios.get('https://meraki-academy-project-5-1jun.onrender.com/restaurants/restaurant/prepare', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -27,7 +27,7 @@ const PreparedOrders = () => {
 
   const handleReadyToPickup = async (orderId) => {
     try {
-      await axios.put(`http://localhost:5000/restaurants/read/${orderId}`, {}, {
+      await axios.put(`https://meraki-academy-project-5-1jun.onrender.com/restaurants/read/${orderId}`, {}, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

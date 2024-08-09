@@ -14,7 +14,7 @@ const GetAllRestaurants = ()=> {
     const [restaurants , setRestaurants]=useState([]);
     const getAllRestaurants = async () => {
         try {
-          const result = await axios.get(`http://localhost:5000/restaurants/`)
+          const result = await axios.get(`https://meraki-academy-project-5-1jun.onrender.com/restaurants/`)
           console.log(result)
           setRestaurants(result.data.result);
         } catch (err) {
@@ -25,7 +25,7 @@ const GetAllRestaurants = ()=> {
     
     const deletedRestaurant = async (id)=>{
         try{
-        const deleted = await axios.put(`http://localhost:5000/restaurants/deleteRestaurant/${id}`)  
+        const deleted = await axios.put(`https://meraki-academy-project-5-1jun.onrender.com/restaurants/deleteRestaurant/${id}`)  
          setRestaurants(restaurants.filter((ele)=> ele.id!== id))    
        }catch(err){ 
         console.log(err) ; 

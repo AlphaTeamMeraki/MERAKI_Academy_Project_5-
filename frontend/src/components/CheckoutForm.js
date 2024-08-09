@@ -32,7 +32,7 @@ const CheckoutForm = ({ totalAmount, createOrder }) => {
 
     setLoading(true);
     try {
-      const { data } = await axios.post(`http://localhost:5000/create-payment-intent/pay`, {
+      const { data } = await axios.post(`https://meraki-academy-project-5-1jun.onrender.com/create-payment-intent/pay`, {
         amount: totalAmount * 100,
         currency: 'usd',
       });

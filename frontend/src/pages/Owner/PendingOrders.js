@@ -37,7 +37,7 @@ const PendingOrders = () => {
     const getPendingOrders = async () => {
       try {
         const result = await axios.get(
-          "http://localhost:5000/restaurants/find",
+          "https://meraki-academy-project-5-1jun.onrender.com/restaurants/find",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -57,7 +57,7 @@ const PendingOrders = () => {
  
   const getItemsOrder = async (id) => {
     try {
-      const result = await axios.get(`http://localhost:5000/orders/${id}`, {
+      const result = await axios.get(`https://meraki-academy-project-5-1jun.onrender.com/orders/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -75,9 +75,9 @@ const PendingOrders = () => {
     try {
       let endpoint;
       if (status === "Preparing") {
-        endpoint = `http://localhost:5000/restaurants/prepare/${orderId}`;
+        endpoint = `https://meraki-academy-project-5-1jun.onrender.com/restaurants/prepare/${orderId}`;
       } else if (status === "Ready") {
-        endpoint = `http://localhost:5000/restaurants/read/${orderId}`;
+        endpoint = `https://meraki-academy-project-5-1jun.onrender.com/restaurants/read/${orderId}`;
       }
 
       await axios.put(
