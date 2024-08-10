@@ -10,7 +10,7 @@ const PORT = process.env.PORT;
 
 //Socket
 const { Server } = require("socket.io");
-const io = new Server(8080, { cors: { origin: "*" } });
+const io = new Server(5000, { cors: { origin: "*" } });
 
 io.use(authSocket);
 
