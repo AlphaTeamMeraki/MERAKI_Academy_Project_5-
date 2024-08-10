@@ -15,7 +15,6 @@ const server = app.listen(PORT, () => {
   console.log(`Server listening at http://localhost:${PORT}`);
 });
 
-// Socket.IO server attached to the same HTTP server
 const { Server } = require("socket.io");
 const io = new Server(server, { cors: { origin: "*" } });
 
@@ -32,12 +31,12 @@ io.on("connection", (socket) => {
 
   messagesHandler(socket, io);
 
-  // Error handler
+  //Error handler
   socket.on("error", (error) => {
     socket.emit("error", { error: error.message });
   });
 
-  // For disconnect
+  // for disconnect
   socket.on("disconnect", () => {
     console.log(socket.id);
     for (const key in clients) {
@@ -49,7 +48,15 @@ io.on("connection", (socket) => {
   });
 });
 
-// Your other routes and middlewares
+// Define all your routes here
+const userRouter = require("./routes/users");
+const cartRouter = require("./routes/cart");
+const orderRouter = require("./routes/order");
+const reviewRouter = require("./routes/review");
+const roleRouter = require("./routes/roles");
+const restaurantRouter = require("./routes/restaurants");
+const ridersRouter = require("./routes/riders");
+
 app.use("/carts", cartRouter);
 app.use("/orders", orderRouter);
 app.use("/reviews", reviewRouter);
@@ -57,11 +64,17 @@ app.use("/users", userRouter);
 app.use("/roles", roleRouter);
 app.use("/restaurants", restaurantRouter);
 app.use("/riders", ridersRouter);
-app.use("/items", itemRouter);
+const itemRouter = require("./routes/item");
+
+const email = require('./routes/email');
 app.use('/contact', email);
 
-// Stripe route
+const auth_socket = require("./middleware/auth_socket");
+const messageHandler = require("./controllers/message");
+
 app.use('/create-payment-intent', require("./routes/stripe"));
+
+app.use("/items", itemRouter);
 
 // Handles any other endpoints [unassigned - endpoints]
 app.use("*", (req, res) => res.status(404).json("NO content at this path"));
