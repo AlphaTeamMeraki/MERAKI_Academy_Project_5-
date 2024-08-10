@@ -112,7 +112,7 @@ const MessageRider = ({ socket, user_id }) => {
      
     </Box>
      <Paper
-     style={{ padding: "20px", marginBottom: "20px", marginTop: "20px" }}
+     style={{ padding: "20px",  width: '400px',marginBottom: "20px", marginTop: "20px" }}
    >
      <Box sx={{
       width: '400px'}} display="flex" alignItems="center">
