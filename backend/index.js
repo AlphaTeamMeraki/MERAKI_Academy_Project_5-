@@ -6,9 +6,15 @@ const messagesHandler = require("./controllers/message");
 const { pool } = require("./models/db");
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(cors({
+  origin: "*",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE", 
+  credentials: true, 
+  allowedHeaders: "Content-Type,Authorization" 
+}));
+
 app.use(express.json());
 
 const server = app.listen(PORT, () => {
@@ -31,12 +37,12 @@ io.on("connection", (socket) => {
 
   messagesHandler(socket, io);
 
-  //Error handler
+  // Error handler
   socket.on("error", (error) => {
     socket.emit("error", { error: error.message });
   });
 
-  // for disconnect
+  // Handle disconnect
   socket.on("disconnect", () => {
     console.log(socket.id);
     for (const key in clients) {
@@ -48,7 +54,6 @@ io.on("connection", (socket) => {
   });
 });
 
-// Define all your routes here
 const userRouter = require("./routes/users");
 const cartRouter = require("./routes/cart");
 const orderRouter = require("./routes/order");
@@ -56,6 +61,8 @@ const reviewRouter = require("./routes/review");
 const roleRouter = require("./routes/roles");
 const restaurantRouter = require("./routes/restaurants");
 const ridersRouter = require("./routes/riders");
+const itemRouter = require("./routes/item");
+const emailRouter = require("./routes/email");
 
 app.use("/carts", cartRouter);
 app.use("/orders", orderRouter);
@@ -64,17 +71,9 @@ app.use("/users", userRouter);
 app.use("/roles", roleRouter);
 app.use("/restaurants", restaurantRouter);
 app.use("/riders", ridersRouter);
-const itemRouter = require("./routes/item");
-
-const email = require('./routes/email');
-app.use('/contact', email);
-
-const auth_socket = require("./middleware/auth_socket");
-const messageHandler = require("./controllers/message");
-
-app.use('/create-payment-intent', require("./routes/stripe"));
-
 app.use("/items", itemRouter);
+app.use('/contact', emailRouter);
+app.use('/create-payment-intent', require("./routes/stripe"));
 
 // Handles any other endpoints [unassigned - endpoints]
 app.use("*", (req, res) => res.status(404).json("NO content at this path"));
