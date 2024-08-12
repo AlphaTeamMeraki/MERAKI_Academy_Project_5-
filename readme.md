@@ -21,7 +21,6 @@
 - [Usage](#usage)
 - [Built Using](#built_using)
 - [User Roles and Relationships](#user_roles)
-- [Environment Variables](#env)
 - [Guided By](#guided_by)
 
 
@@ -83,27 +82,6 @@ Express JS - Server Framework
 React JS - Web Framework
 Node JS - Server Environment
 Material-UI - css 
-
-## 🔒 Environment Variables <a name = "env"></a>
-
-To run this project, you will need to add the following environment variables to your `.env` file in the backend directory:
-PORT = 5000
-CONNECTION_STRING = postgresql://alpha_owner:6hgXxuLCI5Ta@ep-bitter-voice-a5z8jrhf.us-east-2.aws.neon.tech/alpha?sslmode=require
-SECRET = AlphaTeamMeraki
-CLOUDINARY_API_KEY=481273452598338
-CLOUDINARY_API_SECRET=eIqKsMRQ4hB9-xb4cdirzvPdO3k
-CLOUDINARY_CLOUD_NAME=djrwu1bfo
-GOOGLE_CLIENT_ID=370020429272-3caipn4o6jascb8alhqtv6j6i4kp5m5v.apps.googleusercontent.com
-SECRET_STRIPE=sk_test_51PT5vwHe9GdmNhXbRtSyRbcY5F6yuJsRW9Hmqj9iDWt17rKYPjjhL2PJDXKWXdmMoKftKVqA0fPL5CSnGNXizxi4009evuzMBW
-EMAIL=ahmad.m.abulkhair@gmail.com
-PASSWORD=tlob fdox ijqr fqqj
-RECEIVER_EMAIL=ahmad.m.abulkhair@gmail.com
-
-To run this project, you will need to add the following environment variables to your `.env` file in the frontend directory:
-
-REACT_APP_GOOGLE_CLIENT_ID=370020429272-3caipn4o6jascb8alhqtv6j6i4kp5m5v.apps.googleusercontent.com
-REACT_APP_STRIPE_KEY=pk_test_51PT5vwHe9GdmNhXbNbfWLCvv0py0zM4qfmu2jpfJKdpob2By3z05332vYF1mMmbmRC16C2NlYkkFHrRUjp28NCW700c7IrLIVT
-
 
 
 ⚠️ Guided By <a name="guided_by"></a>
